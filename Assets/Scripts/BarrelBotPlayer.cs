@@ -24,29 +24,32 @@ public class BarrelBotPlayer : MonoBehaviour
     void Update()
     {
         Jump();
+        Movement();
     }
 
     private void Movement()
     {
         float xDir = Input.GetAxis("Horizontal");
-        Vector3 playerVel = new Vector3(xDir*horizontalMovementSpeed, myRigidBody.velocity.y);
+        Vector3 playerVel = new Vector3(xDir * horizontalMovementSpeed, myRigidBody.velocity.y);
         myRigidBody.velocity = playerVel;
 
-        bool playerCanMoveLeftandRight = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
-        if(playerCanMoveLeftandRight)
+        transform.localScale = new Vector3(15.0f, 15.0f, 15.0f);
+
+        //bool playerCanMoveLeftandRight = Mathf.Abs(myRigidBody.velocity.x) > Mathf.Epsilon;
+       /* if(playerCanMoveLeftandRight)
         {
-            transform.localScale = new Vector3(Mathf.Sign(myRigidBody.velocity.x), 15.0f);
+            transform.localScale = new Vector3(Mathf.Sign(myRigidBody.velocity.x), 15.0f, 15.0f);
         }
         else{
 
-        }
+        }*/
     }
 
     private void Jump(){
         if(Input.GetButtonDown("Jump"))
         {
             // change velocity in y direction
-            Vector3 jumpVelocityToAdd = new Vector3(0f, jumpSpeed);
+            Vector3 jumpVelocityToAdd = new Vector3(2f, jumpSpeed);
             myRigidBody.velocity += jumpVelocityToAdd;
         }
     }
