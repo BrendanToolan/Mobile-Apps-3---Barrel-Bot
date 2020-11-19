@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BarrelBotPlayer : MonoBehaviour
 {
+    [SerializeField] float xSpeed = 2.0f;
 
     [SerializeField] float jumpSpeed = 15.0f;
     [SerializeField] float horizontalMovementSpeed = 15.0f;
