@@ -1024,6 +1024,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile1Obj: {fileID: 1841125450347550916, guid: 79018978e6bc5c04b80fff6dde3f8364,
     type: 3}
+  blueWallObj: {fileID: 8262554120849515129, guid: a42a387ba8282ed4682774393dadcb48,
+    type: 3}
 --- !u!4 &1644226754
 Transform:
   m_ObjectHideFlags: 0

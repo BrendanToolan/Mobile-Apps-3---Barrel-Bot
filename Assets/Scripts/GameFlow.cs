@@ -13,8 +13,15 @@ using UnityEngine;
 public class GameFlow : MonoBehaviour
 {
 
+    //variables used for generating the ongoing track
     public Transform tile1Obj;
     private Vector3 nextTileSpawn;
+
+    //variables for the obstacles
+    public Transform blueWallObj;
+    private Vector3 nextBlueWallSpawn;
+    private int randomX;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -31,7 +38,11 @@ public class GameFlow : MonoBehaviour
 
     IEnumerator spawnTile(){
         yield return new WaitForSeconds(1);
+        randomX = Random.Range(-2, 3);
+        nextBlueWallSpawn = nextTileSpawn;
+        nextTileSpawn.x = randomX;  
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
+        Instantiate(blueWallObj, nextBlueWallSpawn, blueWallObj.rotation);
         nextTileSpawn.z += 3;
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
         nextTileSpawn.z += 3;
