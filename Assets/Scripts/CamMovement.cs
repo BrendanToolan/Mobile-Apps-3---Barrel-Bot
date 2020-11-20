@@ -1,4 +1,13 @@
-﻿using System.Collections;
+﻿/*
+References
+
+https://www.youtube.com/watch?v=Q4rtR8iNFbY
+
+
+*/
+
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +16,7 @@ public class CamMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = new Vector3(0,0,10);
+        GetComponent<Rigidbody>().velocity = new Vector3(0,0,3);
     }
 
     // Update is called once per frame

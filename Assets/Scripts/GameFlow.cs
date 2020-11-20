@@ -1,4 +1,12 @@
-﻿using System.Collections;
+﻿/*
+References
+
+https://www.youtube.com/watch?v=Q4rtR8iNFbY
+
+
+*/
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,7 +19,7 @@ public class GameFlow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        nextTileSpawn.z = 30;
+        nextTileSpawn.z = 18;
         StartCoroutine(spawnTile());
     }
 
@@ -25,7 +33,8 @@ public class GameFlow : MonoBehaviour
         yield return new WaitForSeconds(1);
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
         nextTileSpawn.z += 3;
-
+        Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
+        nextTileSpawn.z += 3;
         StartCoroutine(spawnTile());
     }
 
