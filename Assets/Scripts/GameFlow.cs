@@ -40,7 +40,7 @@ public class GameFlow : MonoBehaviour
         yield return new WaitForSeconds(1);
         randomX = Random.Range(-2, 3);
         nextBlueWallSpawn = nextTileSpawn;
-        nextTileSpawn.x = randomX;  
+        nextBlueWallSpawn.x = randomX;  
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
         Instantiate(blueWallObj, nextBlueWallSpawn, blueWallObj.rotation);
         nextTileSpawn.z += 3;
