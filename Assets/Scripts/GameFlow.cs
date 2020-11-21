@@ -2,6 +2,7 @@
 References
 
 https://www.youtube.com/watch?v=Q4rtR8iNFbY
+https://www.youtube.com/watch?v=WPnX2qWzZvA
 
 
 */
@@ -24,7 +25,10 @@ public class GameFlow : MonoBehaviour
 
     public Transform redWallObj;
     private Vector3 nextRedWallSpawn;
-    private float randomX2;
+
+    public Transform longRedWallObj;
+    public Vector3 nextlongRedWallSpawn;
+
     
     
 
@@ -44,18 +48,42 @@ public class GameFlow : MonoBehaviour
     IEnumerator spawnTile(){
         yield return new WaitForSeconds(1);
         randomX = Random.Range(-2.4f, 2.4f);
-        randomX2 = Random.Range(-2.4f, 2.4f);
+
         nextBlueWallSpawn = nextTileSpawn;
-        nextRedWallSpawn = nextTileSpawn;
         nextBlueWallSpawn.y = .18f;
-        nextRedWallSpawn.y = .18f;
         nextBlueWallSpawn.x = randomX;  
-        nextRedWallSpawn.x = randomX2;
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
         Instantiate(blueWallObj, nextBlueWallSpawn, blueWallObj.rotation);
-        Instantiate(redWallObj, nextRedWallSpawn, redWallObj.rotation);
+    
         nextTileSpawn.z += 3;
+        randomX = Random.Range(-2.4f, 2.4f);
+        nextRedWallSpawn.z = nextTileSpawn.z;
+        nextRedWallSpawn.x = randomX;
+        nextRedWallSpawn.y = .18f;
+        nextRedWallSpawn.x = randomX;    
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
+        Instantiate(redWallObj, nextRedWallSpawn, redWallObj.rotation);
+       
+        if(randomX == 0)
+        {
+            randomX = 1;
+        }
+        else if(randomX == 1)
+        {
+            randomX =- 1;
+        }
+        else
+        {
+            randomX = 0;
+        }
+
+        nextTileSpawn.z += 3;
+        nextlongRedWallSpawn.z = nextTileSpawn.z;
+        nextlongRedWallSpawn.y = .20f;
+        nextlongRedWallSpawn.x =randomX;
+        Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
+        Instantiate(longRedWallObj, nextlongRedWallSpawn, longRedWallObj.rotation);
+       
         nextTileSpawn.z += 3;
         StartCoroutine(spawnTile());
     }
