@@ -29,6 +29,9 @@ public class GameFlow : MonoBehaviour
     public Transform longRedWallObj;
     public Vector3 nextlongRedWallSpawn;
 
+    public Transform longBlueWallObj;
+    public Vector3 nextlongBlueWallSpawn;
+
     
     
 
@@ -79,10 +82,17 @@ public class GameFlow : MonoBehaviour
 
         nextTileSpawn.z += 3;
         nextlongRedWallSpawn.z = nextTileSpawn.z;
-        nextlongRedWallSpawn.y = .20f;
+        nextlongRedWallSpawn.y = .33f;
         nextlongRedWallSpawn.x =randomX;
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
         Instantiate(longRedWallObj, nextlongRedWallSpawn, longRedWallObj.rotation);
+
+        nextTileSpawn.z += 3;
+        nextlongBlueWallSpawn.z = nextTileSpawn.z;
+        nextlongBlueWallSpawn.y = .33f;
+        nextlongBlueWallSpawn.x =randomX;
+        Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
+        Instantiate(longBlueWallObj, nextlongBlueWallSpawn, longBlueWallObj.rotation);
        
         nextTileSpawn.z += 3;
         StartCoroutine(spawnTile());
