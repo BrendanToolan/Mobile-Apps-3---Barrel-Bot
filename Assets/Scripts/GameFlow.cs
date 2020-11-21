@@ -20,7 +20,12 @@ public class GameFlow : MonoBehaviour
     //variables for the obstacles
     public Transform blueWallObj;
     private Vector3 nextBlueWallSpawn;
-    private int randomX;
+    private float randomX;
+
+    public Transform redWallObj;
+    private Vector3 nextRedWallSpawn;
+    private float randomX2;
+    
     
 
     // Start is called before the first frame update
@@ -38,12 +43,17 @@ public class GameFlow : MonoBehaviour
 
     IEnumerator spawnTile(){
         yield return new WaitForSeconds(1);
-        randomX = Random.Range(-2, 3);
+        randomX = Random.Range(-2.4f, 2.4f);
+        randomX2 = Random.Range(-2.4f, 2.4f);
         nextBlueWallSpawn = nextTileSpawn;
+        nextRedWallSpawn = nextTileSpawn;
         nextBlueWallSpawn.y = .18f;
+        nextRedWallSpawn.y = .18f;
         nextBlueWallSpawn.x = randomX;  
+        nextRedWallSpawn.x = randomX2;
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
         Instantiate(blueWallObj, nextBlueWallSpawn, blueWallObj.rotation);
+        Instantiate(redWallObj, nextRedWallSpawn, redWallObj.rotation);
         nextTileSpawn.z += 3;
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
         nextTileSpawn.z += 3;
