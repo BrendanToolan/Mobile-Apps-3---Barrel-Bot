@@ -639,7 +639,8 @@ Transform:
   m_LocalRotation: {x: 0.4548743, y: -0, z: -0, w: 0.89055574}
   m_LocalPosition: {x: -0.1, y: 1.45, z: -1.12}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1633075551}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 54.114002, y: 0, z: 0}
@@ -972,12 +973,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1633075547}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.15, y: 0.49, z: 1}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: -0.4548743, y: 0, z: -0, w: 0.89055574}
+  m_LocalPosition: {x: -0.050000004, y: 5.205763, z: 4.951367}
+  m_LocalScale: {x: 0.5, y: 0.49999994, z: 0.49999994}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 956595749}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1633075552
 MonoBehaviour:
@@ -992,7 +993,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpSpeed: 8
-  gravity: 20
   speed: 5
 --- !u!54 &1633075553
 Rigidbody:

@@ -17,20 +17,29 @@ public class PlayerMovementScript : MonoBehaviour
     CharacterController controller;
 
     public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
+    //public float gravity = 20.0f;
     public float speed = 6.0f;
 
-    private Vector3 moveXDirection = Vector3.zero;
+    float gravityScaleAtStart;
+
+   // Rigidbody myRidBod;
+    //private Vector3 moveXDirection = Vector3.zero;
     // Start is called before the first frame update
     void Start()
     {
+
         GetComponent<Rigidbody>().velocity = new Vector3(0,0,3);
+     //   myRidBod = GetComponent<Rigidbody>();
+        
        // controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+       // Jump();
+        //XMovement();
         //below code is make the player move to side to side and jump 
       /*  var horizontal = Input.GetAxis("Horizontal");
 
@@ -52,5 +61,24 @@ public class PlayerMovementScript : MonoBehaviour
         controller.Move(moveXDirection * Time.deltaTime);
         */
     }
+
+    /*private void XMovement()
+    {
+        float xDir = Input.GetAxis("Horizontal");
+        Vector3 playerVel = new Vector3(xDir*speed, myRidBod.velocity.y);
+        myRidBod.velocity = playerVel;
+
+        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+    }
+
+    private void Jump()
+    {
+        if(Input.GetButtonDown("Jump"))
+        {
+            Vector3 jumpVelToAdd = new Vector3(0f, jumpSpeed);
+            myRidBod.velocity += jumpVelToAdd;
+        }
+    }*/
+
   
 }
