@@ -64,14 +64,15 @@ public class GameFlow : MonoBehaviour
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
         Instantiate(blueWallObj, nextBlueWallSpawn, blueWallObj.rotation);
     
-        nextTileSpawn.z += 3;
+        
+        /*nextTileSpawn.z += 3;
         randomX = Random.Range(-2.4f, 2.4f);
         nextRedWallSpawn.z = nextTileSpawn.z;
         nextRedWallSpawn.x = randomX;
         nextRedWallSpawn.y = .18f;
         nextRedWallSpawn.x = randomX;    
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
-        Instantiate(redWallObj, nextRedWallSpawn, redWallObj.rotation);
+        Instantiate(redWallObj, nextRedWallSpawn, redWallObj.rotation);*/
        
         if(randomX == 0)
         {
@@ -86,7 +87,7 @@ public class GameFlow : MonoBehaviour
             randomX = 0;
         }
 
-        randomObst = Random.Range(0,2);
+        randomObst = Random.Range(0,3);
         if(randomObst == 0)
         {
             nextTileSpawn.z += 3;
@@ -96,18 +97,31 @@ public class GameFlow : MonoBehaviour
             Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
             Instantiate(longRedWallObj, nextlongRedWallSpawn, longRedWallObj.rotation);
 
-        }else 
+        }
+        
+        else if (randomObst == 1)
         {
-             nextTileSpawn.z += 3;
-        nextlongBlueWallSpawn.z = nextTileSpawn.z;
-        nextlongBlueWallSpawn.y = .33f;
-        nextlongBlueWallSpawn.x =randomX;
-        Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
-        Instantiate(longBlueWallObj, nextlongBlueWallSpawn, longBlueWallObj.rotation);
+            nextTileSpawn.z += 3;
+            randomX = Random.Range(-2.4f, 2.4f);
+            nextRedWallSpawn.z = nextTileSpawn.z;
+            nextRedWallSpawn.x = randomX;
+            nextRedWallSpawn.y = .18f;
+            nextRedWallSpawn.x = randomX;    
+            Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
+            Instantiate(redWallObj, nextRedWallSpawn, redWallObj.rotation);
+        }
+        else 
+        {  
+            nextTileSpawn.z += 3;
+            nextlongBlueWallSpawn.z = nextTileSpawn.z;
+            nextlongBlueWallSpawn.y = .33f;
+            nextlongBlueWallSpawn.x =randomX;
+            Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
+            Instantiate(longBlueWallObj, nextlongBlueWallSpawn, longBlueWallObj.rotation);
 
         }
 
-       
+        
        
        /* nextMovingObsObj.z = nextTileSpawn.z;
         nextMovingObsObj.y = .33f;
