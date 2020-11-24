@@ -32,6 +32,12 @@ public class GameFlow : MonoBehaviour
     public Transform longBlueWallObj;
     public Vector3 nextlongBlueWallSpawn;
 
+    private int randomObst;
+
+/*
+    public Transform movingObsObj;
+    private Vector3 nextMovingObsObj;*/
+
     
     
 
@@ -80,20 +86,34 @@ public class GameFlow : MonoBehaviour
             randomX = 0;
         }
 
-        nextTileSpawn.z += 3;
-        nextlongRedWallSpawn.z = nextTileSpawn.z;
-        nextlongRedWallSpawn.y = .33f;
-        nextlongRedWallSpawn.x =randomX;
-        Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
-        Instantiate(longRedWallObj, nextlongRedWallSpawn, longRedWallObj.rotation);
+        randomObst = Random.Range(0,2);
+        if(randomObst == 0)
+        {
+            nextTileSpawn.z += 3;
+            nextlongRedWallSpawn.z = nextTileSpawn.z;
+            nextlongRedWallSpawn.y = .33f;
+            nextlongRedWallSpawn.x =randomX;
+            Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
+            Instantiate(longRedWallObj, nextlongRedWallSpawn, longRedWallObj.rotation);
 
-        nextTileSpawn.z += 3;
+        }else 
+        {
+             nextTileSpawn.z += 3;
         nextlongBlueWallSpawn.z = nextTileSpawn.z;
         nextlongBlueWallSpawn.y = .33f;
         nextlongBlueWallSpawn.x =randomX;
         Instantiate(tile1Obj, nextTileSpawn, tile1Obj.rotation);
         Instantiate(longBlueWallObj, nextlongBlueWallSpawn, longBlueWallObj.rotation);
+
+        }
+
        
+       
+       /* nextMovingObsObj.z = nextTileSpawn.z;
+        nextMovingObsObj.y = .33f;
+        nextMovingObsObj.x = randomX;
+        Instantiate(movingObsObj, nextMovingObsObj, movingObsObj.rotation);
+    */
         nextTileSpawn.z += 3;
         StartCoroutine(spawnTile());
     }
