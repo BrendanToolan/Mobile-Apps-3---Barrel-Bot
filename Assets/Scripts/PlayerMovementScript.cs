@@ -16,20 +16,36 @@ public class PlayerMovementScript : MonoBehaviour
     Rigidbody myRidBod;
     public float speed;
 
+    public Vector3 jump;
+    public float jumpForce = 2.0f;
+    public bool isGrounded;
+
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Rigidbody>().velocity = new Vector3(0,0,6);
         myRidBod = GetComponent<Rigidbody>();
+        jump = new Vector3(0.0f, 2.0f, 0.0f);
+       
+    }
+
+    void onCollisionStay()
+    {
+        isGrounded = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
         xMovement();
-    }
+        //Jump();
 
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded)
+        {
+            myRidBod.AddForce(jump*jumpForce, ForceMode.Impulse);
+            isGrounded = false;
+        }
+    }
 
     private void xMovement()
     {
@@ -37,4 +53,8 @@ public class PlayerMovementScript : MonoBehaviour
         float verticalM = Input.GetAxis("Vertical");
         myRidBod.velocity = new Vector3 (horizontalM * speed, myRidBod.velocity.y, verticalM * speed);
     }
+
+   
+
+    
 }
