@@ -61,19 +61,27 @@ public class PlayerMovementScript : MonoBehaviour
         myRidBod.velocity = new Vector3 (horizontalM * speed, myRidBod.velocity.y, verticalM * speed);*/
         if(Input.GetKey("a"))
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(-2.0f, 0, 3);
+            GetComponent<Rigidbody>().velocity = new Vector3(-2.4f, 0, 3);
+            StartCoroutine(stopMove());
         }
 
         if(Input.GetKey("d"))
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(2.0f, 0, 3);
+            GetComponent<Rigidbody>().velocity = new Vector3(2.4f, 0, 3);
+            StartCoroutine(stopMove());
         }
 
         if(Input.GetKey("space"))
         {
-            GetComponent<Rigidbody>().velocity = new Vector3(0, 3, 3);
+            GetComponent<Rigidbody>().velocity = new Vector3(0, 2, 3);
             StartCoroutine(stopJump());
         }
+    }
+
+    IEnumerator stopMove()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GetComponent<Rigidbody>().velocity = new Vector3(0,0,3);
     }
 
     IEnumerator stopJump()
