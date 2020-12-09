@@ -7,6 +7,8 @@ https://docs.unity3d.com/ScriptReference/CharacterController-isGrounded.html
 https://docs.unity3d.com/ScriptReference/CharacterController.Move.html
 https://www.youtube.com/watch?v=Ws1B1AGm-oM
 https://www.youtube.com/watch?v=chuJ_XIxbhk
+https://unitygamescripts.wordpress.com/2017/03/28/simple-jump-script-for-unity3d/
+
 */
 
 using System.Collections;
@@ -21,9 +23,14 @@ public class PlayerMovementScript : MonoBehaviour
     float horizontalInput;
     public float horizontalMulti = 1.5f;
 
+    private float jumpForce = 5.0f;
+    private bool onGround;
+
     // Start is called before the first frame update
     void Start()
     {
+        myRidBod = GetComponent<Rigidbody>();
+        onGround = true;
               
     }
 
@@ -38,7 +45,20 @@ public class PlayerMovementScript : MonoBehaviour
     void Update()
     {
         horizontalInput = Input.GetAxis("Horizontal");
+
+        if(Input.GetButton("Jump") && onGround == true)
+        {
+            myRidBod.velocity = new Vector3(0f, jumpForce, 0f);
+            onGround = false;
+        }
       
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if(other.gameObject.CompareTag("Ground")){
+            onGround = true;
+        }
     }
 
     
