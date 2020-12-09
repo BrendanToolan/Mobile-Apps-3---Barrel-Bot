@@ -19,6 +19,7 @@ public class PlayerMovementScript : MonoBehaviour
     public float speed = 3;
 
     float horizontalInput;
+    public float horizontalMulti = 1.5f;
 
     // Start is called before the first frame update
     void Start()
@@ -29,7 +30,7 @@ public class PlayerMovementScript : MonoBehaviour
     void FixedUpdate()
     {
         Vector3 forwardMovement = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMovement = transform.right * horizontalInput * speed * Time.fixedDeltaTime;
+        Vector3 horizontalMovement = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMulti;
         myRidBod.MovePosition(myRidBod.position + forwardMovement + horizontalMovement);
     }
 

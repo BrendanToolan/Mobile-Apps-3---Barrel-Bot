@@ -13,15 +13,20 @@ using UnityEngine;
 
 public class CamMovement : MonoBehaviour
 {
+
+    public Transform player;
+    Vector3 offset;
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = new Vector3(0,0,3);
+        offset = transform.position - player.position;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        transform.position = player.position + offset;
     }
 }
