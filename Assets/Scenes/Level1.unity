@@ -1311,6 +1311,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: ResumeGame
       objectReference: {fileID: 0}
+    - target: {fileID: 3110617433692274069, guid: c985618af86739b42b2dbfa612a22134,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.3773585
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110617433692274069, guid: c985618af86739b42b2dbfa612a22134,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.076539695
+      objectReference: {fileID: 0}
+    - target: {fileID: 3110617433692274069, guid: c985618af86739b42b2dbfa612a22134,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.2144473
+      objectReference: {fileID: 0}
     - target: {fileID: 3110617434062410675, guid: c985618af86739b42b2dbfa612a22134,
         type: 3}
       propertyPath: m_Name
