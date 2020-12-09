@@ -14,6 +14,7 @@ https://unitygamescripts.wordpress.com/2017/03/28/simple-jump-script-for-unity3d
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -26,16 +27,20 @@ public class PlayerMovementScript : MonoBehaviour
     private float jumpForce = 5.0f;
     private bool onGround;
 
+    bool isAlive = true;
+
     // Start is called before the first frame update
     void Start()
     {
-        myRidBod = GetComponent<Rigidbody>();
+        //myRidBod = GetComponent<Rigidbody>();
         onGround = true;
               
     }
 
     void FixedUpdate()
     {
+        if(!isAlive) return;
+
         Vector3 forwardMovement = transform.forward * speed * Time.fixedDeltaTime;
         Vector3 horizontalMovement = transform.right * horizontalInput * speed * Time.fixedDeltaTime * horizontalMulti;
         myRidBod.MovePosition(myRidBod.position + forwardMovement + horizontalMovement);
@@ -46,12 +51,22 @@ public class PlayerMovementScript : MonoBehaviour
     {
         horizontalInput = Input.GetAxis("Horizontal");
 
+        if(transform.position.y < -5){
+            Die();
+        }
+
         if(Input.GetButton("Jump") && onGround == true)
         {
             myRidBod.velocity = new Vector3(0f, jumpForce, 0f);
             onGround = false;
         }
       
+    }
+
+    public void Die()
+    {
+        isAlive = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     void OnCollisionEnter(Collision other)
