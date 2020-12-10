@@ -344,7 +344,7 @@ PrefabInstance:
     - target: {fileID: 8289305123565722967, guid: f8c949f515851dd47b6e1310f688f5cb,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8289305123565722988, guid: f8c949f515851dd47b6e1310f688f5cb,
         type: 3}
@@ -373,7 +373,7 @@ PrefabInstance:
     - target: {fileID: 2558786528202289067, guid: 6a2cb08f84d8f7144ba3b1c4fd97cc12,
         type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2573708616951766085, guid: 6a2cb08f84d8f7144ba3b1c4fd97cc12,
         type: 3}
@@ -388,7 +388,7 @@ PrefabInstance:
     - target: {fileID: 2573708616951766085, guid: 6a2cb08f84d8f7144ba3b1c4fd97cc12,
         type: 3}
       propertyPath: m_CollisionDetection
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8877765185358151466, guid: 6a2cb08f84d8f7144ba3b1c4fd97cc12,
         type: 3}

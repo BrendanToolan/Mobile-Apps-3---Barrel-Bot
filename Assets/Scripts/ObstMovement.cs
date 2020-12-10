@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ObstMovement : MonoBehaviour
 {
-    [SerializeField] float xSpeed = 1.5f;
+    //[SerializeField] float xSpeed = 1.5f;
     Rigidbody Rb;
 
     void Start()
@@ -14,27 +14,22 @@ public class ObstMovement : MonoBehaviour
 
     void Update()
     {
-        Rb.velocity = new Vector3(xSpeed, 0f, 0f);
+        xMovement();
+    }
+
+    private void xMovement()
+    {
+        Rb.velocity = new Vector3(2f, 0, 0);
+        StartCoroutine(stopMove());
 
     }
 
-
-    void OnTriggerEnter(Collider other)
+    IEnumerator stopMove()
     {
-       
-        if(other.gameObject.CompareTag("Wall"))
-        {
-            Rb.velocity = new Vector3(-xSpeed, 0f, 0f);
-        }
-        
+        yield return new WaitForSeconds(4f);
+        Rb.velocity = new Vector3(-2f, 0, 0);
+        //yield return new WaitForSeconds(8f);
+        //Rb.velocity = new Vector3(2f, 0, 0);
     }
-    /*private void onEnterCollision(Collision collision)
-    {
-        if(collision.gameObject.name == "Wall"){
-            Rb.velocity = new Vector3(-xSpeed, 0f, 0f);
-        }
 
-    }*/
-
-    
 }
