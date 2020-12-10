@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class ObstMovement : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] float xSpeed = 1.2f;
+    Rigidbody Rb;
+
     void Start()
     {
-        GetComponent<Rigidbody>().velocity = new Vector3(2,0,0);
+        Rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        Rb.velocity = new Vector3(xSpeed, 0f, 0f);
     }
 }
