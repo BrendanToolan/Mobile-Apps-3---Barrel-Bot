@@ -26,7 +26,7 @@ public class ObstMovement : MonoBehaviour
 
     IEnumerator stopMove()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(0.5f);
         Rb.velocity = new Vector3(-2f, 0, 0);
         //yield return new WaitForSeconds(8f);
         //Rb.velocity = new Vector3(2f, 0, 0);
