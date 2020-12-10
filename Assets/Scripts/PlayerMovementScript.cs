@@ -67,6 +67,8 @@ public class PlayerMovementScript : MonoBehaviour
     {
         isAlive = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        FindObjectOfType<GameSession>().ProcessPlayerDeath();
     }
 
     void OnCollisionEnter(Collision other)

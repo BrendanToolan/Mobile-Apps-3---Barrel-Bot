@@ -6,6 +6,10 @@ using UnityEngine.UI;
 
 public class GameSession : MonoBehaviour
 {
+    [SerializeField] int playerLives = 5;
+    [SerializeField] Text livesText;
+
+
     private void Awake()
    {
        int numGameSession = FindObjectsOfType<GameSession>().Length;
@@ -18,6 +22,30 @@ public class GameSession : MonoBehaviour
        {
            DontDestroyOnLoad(gameObject);
        }
+   }
+
+   public void Start()
+   {
+       livesText.text = playerLives.ToString();
+   }
+
+   public void ProcessPlayerDeath(){
+       if(playerLives > 1)
+       {
+           TakeLife();
+       }
+       else
+       {
+           ResetGameSession();
+       }
+   }
+
+   private void TakeLife()
+   {
+       playerLives--;
+       var currScene = SceneManager.GetActiveScene().buildIndex;
+       SceneManager.LoadScene(currScene);
+       livesText.text = playerLives.ToString();
    }
 
    public void ResetGameSession()
