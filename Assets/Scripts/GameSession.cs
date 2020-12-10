@@ -49,7 +49,7 @@ public class GameSession : MonoBehaviour
 
    public void ResetGameSession()
    {
-       SceneManager.LoadScene(2);
+       SceneManager.LoadScene(4);
        Destroy(gameObject);
       
    }
