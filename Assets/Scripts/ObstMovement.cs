@@ -14,22 +14,27 @@ public class ObstMovement : MonoBehaviour
 
     void Update()
     {
-        if(IsMovingRight()){
-            Rb.velocity = new Vector3(xSpeed, 0f, 0f);
-        }else{
-            Rb.velocity = new Vector3(-xSpeed, 0f, 0f); 
+        Rb.velocity = new Vector3(xSpeed, 0f, 0f);
+
+    }
+
+
+    void OnTriggerEnter(Collider other)
+    {
+       
+        if(other.gameObject.CompareTag("Wall"))
+        {
+            Rb.velocity = new Vector3(-xSpeed, 0f, 0f);
         }
         
     }
-
-    private bool IsMovingRight()
+    /*private void onEnterCollision(Collision collision)
     {
-        return transform.localScale.x > 0;   
-    }
+        if(collision.gameObject.name == "Wall"){
+            Rb.velocity = new Vector3(-xSpeed, 0f, 0f);
+        }
 
-    private void OnTriggerExit(Collider collision)
-    {
-        transform.localScale = new Vector3(-(Mathf.Sign(Rb.velocity.x)), 2.65f);
-    }
+    }*/
+
     
 }
