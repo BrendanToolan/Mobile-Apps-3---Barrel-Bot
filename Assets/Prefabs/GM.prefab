@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1607593167663472302
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607593167663472300}
+  - component: {fileID: 1607593167663472303}
+  - component: {fileID: 1607593167663472301}
+  m_Layer: 0
+  m_Name: GM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1607593167663472300
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607593167663472302}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.8183057, y: 2.4521794, z: -10.3626}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607593167663472303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607593167663472302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d18f19868d98d264499c0c811b08977b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile1Obj: {fileID: 1841125450347550916, guid: 79018978e6bc5c04b80fff6dde3f8364,
+    type: 3}
+  blueWallObj: {fileID: 8262554120849515129, guid: a42a387ba8282ed4682774393dadcb48,
+    type: 3}
+  redWallObj: {fileID: 7490999997648631315, guid: a7df4d86e68fdd648b2c8015345c114c,
+    type: 3}
+  longRedWallObj: {fileID: 8045750839756792551, guid: af85a667bff75c341923f9c743458f7e,
+    type: 3}
+  nextlongRedWallSpawn: {x: 0, y: 0, z: 0}
+  longBlueWallObj: {fileID: 706557150182507166, guid: 4a8beffa4b922714490e2f6532c1ae6e,
+    type: 3}
+  nextlongBlueWallSpawn: {x: 0, y: 0, z: 0}
+--- !u!114 &1607593167663472301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607593167663472302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0752f67da2531a54085bf68bec679428, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+  isPaused: 0
