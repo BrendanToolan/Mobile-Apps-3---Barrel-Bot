@@ -32,7 +32,9 @@ public class PlayerMovementScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //myRidBod = GetComponent<Rigidbody>();
+       // isAlive = true;
+        myRidBod = GetComponent<Rigidbody>();
+        //myCollider = GetComponent<CapsuleCollider>();
         onGround = true;
               
     }
@@ -49,6 +51,7 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         horizontalInput = Input.GetAxis("Horizontal");
 
         if(transform.position.y < -5){
@@ -67,7 +70,6 @@ public class PlayerMovementScript : MonoBehaviour
     {
         isAlive = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-
         FindObjectOfType<GameSession>().ProcessPlayerDeath();
     }
 
