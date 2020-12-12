@@ -36,6 +36,10 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
+     <Compile Include="Assets\FarlandSkies\Demo\Scripts\Player\FPSWalkerEnhanced.cs" />
+     <Compile Include="Assets\FarlandSkies\Demo\Scripts\Player\SmoothMouseLook.cs" />
+     <Compile Include="Assets\FarlandSkies\Demo\Scripts\Skybox\SkyboxChanger.cs" />
+     <Compile Include="Assets\FarlandSkies\Demo\Scripts\Skybox\SkyboxRotator.cs" />
      <Compile Include="Assets\RobotSphere\Assets\Scripts\RobotFreeAnim.cs" />
      <Compile Include="Assets\Scripts\CamMovement.cs" />
      <Compile Include="Assets\Scripts\GameFlow.cs" />
@@ -230,9 +234,6 @@
     </Reference>
     <Reference Include="UnityEditor">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
-    </Reference>
-    <Reference Include="Assembly-CSharp-firstpass">
-        <HintPath>C:/Users/TrendanBoolan/Barrel Bot/Library/ScriptAssemblies/Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
         <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.11f1/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
