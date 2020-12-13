@@ -12,6 +12,11 @@ public class MainMenu : MonoBehaviour
         Debug.Log("Starting The Game");
     }
 
+    public void Options()
+    {
+        Debug.Log("button works");
+    }
+
     //method used to quit the game
     public void QuitGame()
     {
