@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    public GameObject mainMenu;
+    public GameObject optionsMenu;
+    public bool isMainMenuOpened;
+    public bool isOptionsMenuOpened;
+
+    void Start()
+    {
+        mainMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+    }
+
     //method that is used to start the game and put the player at the first level of the game
     public void StartGame()
     {
@@ -14,6 +25,11 @@ public class MainMenu : MonoBehaviour
 
     public void Options()
     {
+        mainMenu.SetActive(false);
+        optionsMenu.SetActive(true);
+        Time.timeScale = 0f;
+        isOptionsMenuOpened = true;
+        isMainMenuOpened = false;
         Debug.Log("button works");
     }
 
