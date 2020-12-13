@@ -33,6 +33,17 @@ public class MainMenu : MonoBehaviour
         Debug.Log("button works");
     }
 
+
+    public void BackToMain()
+    {
+        mainMenu.SetActive(true);
+        optionsMenu.SetActive(false);
+        Time.timeScale = 0f;
+        isOptionsMenuOpened = false;
+        isMainMenuOpened = true;
+        Debug.Log("Works");
+    }
+
     //method used to quit the game
     public void QuitGame()
     {
