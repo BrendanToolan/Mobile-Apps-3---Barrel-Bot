@@ -351,6 +351,11 @@ PrefabInstance:
       propertyPath: speed
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8289305123565722988, guid: f8c949f515851dd47b6e1310f688f5cb,
+        type: 3}
+      propertyPath: horizontalMulti
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f8c949f515851dd47b6e1310f688f5cb, type: 3}
 --- !u!1001 &458743596
@@ -1219,16 +1224,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tile1Obj: {fileID: 1841125450347550916, guid: 79018978e6bc5c04b80fff6dde3f8364,
     type: 3}
-  blueWallObj: {fileID: 7490999997648631315, guid: a7df4d86e68fdd648b2c8015345c114c,
+  blueWallObj: {fileID: 8262554120849515129, guid: a42a387ba8282ed4682774393dadcb48,
     type: 3}
   redWallObj: {fileID: 7490999997648631315, guid: a7df4d86e68fdd648b2c8015345c114c,
     type: 3}
-  longRedWallObj: {fileID: 7158770886201529222, guid: ca5a8b6749a1a3844aefff7e1409445d,
+  longRedWallObj: {fileID: 8045750839756792551, guid: af85a667bff75c341923f9c743458f7e,
     type: 3}
   nextlongRedWallSpawn: {x: 0, y: 0, z: 0}
-  longBlueWallObj: {fileID: 3526277047658081707, guid: 76beac5b7ae7ea044b1b25fe6c2d4094,
+  longBlueWallObj: {fileID: 706557150182507166, guid: 4a8beffa4b922714490e2f6532c1ae6e,
     type: 3}
   nextlongBlueWallSpawn: {x: 0, y: 0, z: 0}
+  wallWithGap: {fileID: 7158770886201529222, guid: ca5a8b6749a1a3844aefff7e1409445d,
+    type: 3}
+  nextWallWithGap1: {x: 0, y: 0, z: 0}
+  wallWithGap2: {fileID: 643541048246620281, guid: 943eab4d6499ceb4f99ff49ec2b8e412,
+    type: 3}
+  nextWallWithGap2: {x: 0, y: 0, z: 0}
+  wallWithGap3: {fileID: 3526277047658081707, guid: 76beac5b7ae7ea044b1b25fe6c2d4094,
+    type: 3}
+  nextWallWithGap3: {x: 0, y: 0, z: 0}
 --- !u!1 &2012828628
 GameObject:
   m_ObjectHideFlags: 0
