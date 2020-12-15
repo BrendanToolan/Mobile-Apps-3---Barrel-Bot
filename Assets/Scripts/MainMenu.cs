@@ -18,8 +18,10 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject mainMenu;
     public GameObject optionsMenu;
+    public GameObject selectLvlMenu;
     public bool isMainMenuOpened;
     public bool isOptionsMenuOpened;
+    public bool isSelectLvlOpened;
 
     public AudioMixer audioMx;
     public Slider slider;
@@ -31,6 +33,7 @@ public class MainMenu : MonoBehaviour
 
         mainMenu.SetActive(true);
         optionsMenu.SetActive(false);
+        selectLvlMenu.SetActive(false);
 
     }
 
@@ -52,6 +55,31 @@ public class MainMenu : MonoBehaviour
         Debug.Log("button works");
     }
 
+    public void SelectLvl()
+    {
+        mainMenu.SetActive(false);
+        selectLvlMenu.SetActive(true);
+        //Time.timeScale = 0f;
+        isSelectLvlOpened = true;
+        isMainMenuOpened = false;
+        Debug.Log("button works");
+    }
+
+    public void lvl1Button(){
+        SceneManager.LoadScene(1);
+        Debug.Log("Starting Lvl 1");
+    }
+
+    public void lvl2Button(){
+        SceneManager.LoadScene(2);
+        Debug.Log("Starting Lvl 2");
+
+    }public void lvl3Button(){
+        SceneManager.LoadScene(3);
+        Debug.Log("Starting Lvl 3");
+
+    }
+
     public void SetVolume(float vol){
         Debug.Log(vol);
         audioMx.SetFloat("vol", vol);
@@ -64,6 +92,16 @@ public class MainMenu : MonoBehaviour
         optionsMenu.SetActive(false);
         //Time.timeScale = 0f;
         isOptionsMenuOpened = false;
+        isMainMenuOpened = true;
+        Debug.Log("Works");
+    }
+
+    public void BackToMainFrom2()
+    {
+        mainMenu.SetActive(true);
+        selectLvlMenu.SetActive(false);
+        //Time.timeScale = 0f;
+        isSelectLvlOpened = false;
         isMainMenuOpened = true;
         Debug.Log("Works");
     }

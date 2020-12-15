@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Obstacles : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class Obstacles : MonoBehaviour
     {
         if(collision.gameObject.name == "Player"){
             playerMovement.Die();
+
         }
     }
 

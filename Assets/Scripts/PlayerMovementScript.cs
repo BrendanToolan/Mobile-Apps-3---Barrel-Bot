@@ -15,6 +15,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class PlayerMovementScript : MonoBehaviour
 {
@@ -70,6 +71,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         isAlive = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        //FindObjectOfType<AudioScript>().Play("PlayerDeath");
         FindObjectOfType<GameSession>().ProcessPlayerDeath();
     }
 
