@@ -10,6 +10,7 @@ https://www.youtube.com/watch?v=WPnX2qWzZvA
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameFlow : MonoBehaviour
 {
@@ -46,12 +47,19 @@ public class GameFlow : MonoBehaviour
     {
         nextTileSpawn.z = 18;
         StartCoroutine(spawnTile());
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(nextTileSpawn.z == 258)
+        {
+            nextTileSpawn.z += 0;
+            SceneManager.LoadScene(2);
+            Debug.Log("Level2");
+        }
     }
 
     IEnumerator spawnTile(){
@@ -121,6 +129,8 @@ public class GameFlow : MonoBehaviour
 
         }
 
+
+        
         
        
        /* nextMovingObsObj.z = nextTileSpawn.z;
