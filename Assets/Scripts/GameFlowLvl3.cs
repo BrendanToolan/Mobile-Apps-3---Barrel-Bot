@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameFlowLvl3 : MonoBehaviour
 {
@@ -60,6 +61,12 @@ public class GameFlowLvl3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(nextTileSpawn.z == 321)
+        {
+            nextTileSpawn.z += 0;
+            SceneManager.LoadScene(525);
+            Debug.Log("GameDone");
+        }
         
     }
 
