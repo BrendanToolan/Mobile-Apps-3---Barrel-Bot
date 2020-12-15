@@ -3,7 +3,6 @@ references
 
 https://www.youtube.com/watch?v=YOaYQrN1oYQ&t=25s
 https://www.youtube.com/watch?v=-Vp13LMjWsE
-
 https://gamedevbeginner.com/the-right-way-to-make-a-volume-slider-in-unity-using-logarithmic-conversion/
 */
 
